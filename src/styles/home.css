@@ -1,0 +1,86 @@
+.container {
+  position: relative;
+  background-image: linear-gradient(
+    to top,
+    #0287c3,
+    #0287bf,
+    #0587bb,
+    #0c86b6,
+    #1386b2
+  );
+  height: 80vh;
+  width: 100%;
+}
+
+.wave {
+  position: absolute;
+  height: 141px;
+  width: 98%;
+  background-image: linear-gradient(
+    to top,
+    #0287c3,
+    #0287bf,
+    #0587bb,
+    #0c86b6,
+    #1386b2
+  );
+  bottom: 0;
+}
+
+.wave::before,
+.wave::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+}
+
+.wave::before {
+  width: 55%;
+  height: 109%;
+  background-color: #fff;
+  right: -1.5%;
+  top: 60%;
+}
+.wave::after {
+  width: 55%;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    #0287c3,
+    #0287bf,
+    #0587bb,
+    #0c86b6,
+    #1386b2
+  );
+  left: -1.5%;
+  top: 40%;
+}
+.hero-section {
+  margin-top: 150px;
+  text-align: left;
+  margin-left: 150px;
+}
+.hero-section > h1 {
+  font-size: 3rem;
+}
+.hero-section > h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.hero-section > h1,
+h3 {
+  color: #fff;
+}
+.news-btn {
+  margin-top: 30px;
+  background-color: #ff9800;
+  color: #fff;
+  width: 180px;
+  height: 40px;
+  border: #ff9800;
+}
+.wallet-btn {
+  width: 180px;
+  height: 40px;
+}

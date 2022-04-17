@@ -1,0 +1,15 @@
+.site-layout-background {
+  background: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.input-payment-fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.input-message-fields {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
