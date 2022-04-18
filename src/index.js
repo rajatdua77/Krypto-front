@@ -4,15 +4,18 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
+import { WalletProvider } from "./context/Wallet";
 import reportWebVitals from "./reportWebVitals";
 import store from "./app/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <WalletProvider>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </WalletProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

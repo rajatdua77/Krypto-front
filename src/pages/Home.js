@@ -2,14 +2,16 @@ import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import "../styles/home.css";
 import { Row, Col, Button } from "antd";
+import { useWallet } from "../context/Wallet";
 import Navbar from "../components/Navbar";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SecurityCard from "../components/SecuritySection";
 import SmartInvestments from "../components/InvestmentsSection";
 
 const HomePage = () => {
   const navigation = useNavigate();
   const redirectTo = useCallback((path) => navigation(path), [navigation]);
+  const { isMetamaskInstalled } = useWallet();
   return (
     <>
       <section class="container">
@@ -29,13 +31,19 @@ const HomePage = () => {
                 more streamlined approach.
               </h3>
               <Button className="news-btn">View News</Button> &nbsp;
-              <Button
-                onClick={() => redirectTo("/dashboard")}
-                type="default"
-                className="wallet-btn"
-              >
-                Get Started
-              </Button>
+              {isMetamaskInstalled ? (
+                <Button
+                  onClick={() => redirectTo("/dashboard")}
+                  type="default"
+                  className="wallet-btn"
+                >
+                  Dashboard
+                </Button>
+              ) : (
+                <Link className="wallet-btn" to="https://metamask.io/">
+                  Install Metamask
+                </Link>
+              )}
             </div>
           </Col>
           <Col span={12}>
