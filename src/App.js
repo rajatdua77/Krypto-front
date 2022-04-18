@@ -18,7 +18,7 @@ function App() {
           <Route path="deposit" element={<Deposit />} />
           <Route path="withdraw" element={<Withdraw />} />
           <Route path="sendDirect" element={<SendDirect />} />
-          <Route path="cryptocurrency" element={<Cryptocurrency />} />
+          <Route path="" element={<Cryptocurrency />} />
           <Route path="home" element={<HomePage />} />
         </Route>
       </Routes>

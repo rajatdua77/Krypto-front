@@ -4,6 +4,8 @@ import styles from "./styles.module.css";
 import { DollarOutlined } from "@ant-design/icons";
 const { Content } = Layout;
 const SendDirect = () => {
+  const [amount, setAmount] = React.useState();
+  const [address, setAddress] = React.useState();
   return (
     <div>
       <Content style={{ margin: "0 16px" }}>
@@ -23,6 +25,8 @@ const SendDirect = () => {
               style={{ margin: "10px" }}
               type="text || number"
               required
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
             />
             <Input
               size="large"
@@ -30,6 +34,8 @@ const SendDirect = () => {
               style={{ margin: "10px" }}
               type="number"
               required
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
             />
           </div>
           <div className={styles["input-message-fields"]}>
@@ -53,6 +59,7 @@ const SendDirect = () => {
               marginTop: "40px",
               maxWidth: "90%",
             }}
+            onClick={() => {}}
           >
             Send Direct <DollarOutlined />
           </Button>

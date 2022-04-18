@@ -3,7 +3,6 @@ import React, { useState, useCallback } from "react";
 import { Layout, Menu } from "antd";
 import {
   FileOutlined,
-  TeamOutlined,
   UserOutlined,
   MoneyCollectOutlined,
   UserSwitchOutlined,
@@ -11,7 +10,7 @@ import {
 } from "@ant-design/icons";
 import { useNavigate, Outlet } from "react-router-dom";
 import styles from "./styles.module.css";
-
+import { useWallet } from "../../context/Wallet";
 const { Header, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -23,6 +22,8 @@ function SideSlider() {
     (path) => navigation(`/dashboard${path}`),
     [navigation]
   );
+
+  const { walletBalance } = useWallet();
   return (
     <div>
       <Layout style={{ minHeight: "100vh" }}>
@@ -31,7 +32,7 @@ function SideSlider() {
           collapsed={collapsed}
           onCollapse={() => setCollapsed((e) => !e)}
         >
-          <div className={styles["logo"]}>
+          <div className={styles["logo-container"]}>
             <img
               src="/assets/images/logo.png"
               alt="logo"
@@ -81,20 +82,19 @@ function SideSlider() {
               <Menu.Item key="7">Team 1</Menu.Item>
               <Menu.Item key="8">Team 2</Menu.Item>
             </SubMenu> */}
-            <Menu.Item
-              key="9"
-              onClick={() => redirectTo("/cryptocurrency")}
-              icon={<FileOutlined />}
-            >
+            <Menu.Item key="9" icon={<FileOutlined />}>
               Market
             </Menu.Item>
           </Menu>
         </Sider>
         <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }} />
-
+          <Header className="site-layout-background" style={{ padding: 0 }}>
+            <h3 className={styles["balance"]}>
+              Current balance : {walletBalance}
+            </h3>
+          </Header>
           <Outlet />
-          <Footer style={{ textAlign: "center" }}>
+          <Footer style={{ textAlign: "center", alignContent: "baseline" }}>
             Krypto-Wallet ©2022 Created by Rajat Dua
           </Footer>
         </Layout>
