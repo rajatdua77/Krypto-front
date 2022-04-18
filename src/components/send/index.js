@@ -1,11 +1,24 @@
 import React from "react";
 import { Layout, Breadcrumb, Input, Button } from "antd";
+import { useWallet } from "../../context/Wallet";
 import styles from "./styles.module.css";
 import { SendOutlined } from "@ant-design/icons";
 const { Content } = Layout;
 const Send = () => {
   const [amount, setAmount] = React.useState();
   const [address, setAddress] = React.useState();
+
+  const { transfer, fetchCurrentWalletBalance } = useWallet();
+
+  const handleSend = React.useCallback(async () => {
+    if (amount && address) {
+      await transfer(address, amount, "wallet");
+      await fetchCurrentWalletBalance();
+      setAmount();
+      setAddress();
+    }
+  }, [address, amount, fetchCurrentWalletBalance, transfer]);
+
   return (
     <div>
       <Content style={{ margin: "0 16px" }}>
@@ -59,6 +72,7 @@ const Send = () => {
               marginTop: "40px",
               maxWidth: "90%",
             }}
+            onClick={handleSend}
           >
             Send <SendOutlined />
           </Button>

@@ -1,10 +1,23 @@
 import React from "react";
 import { Layout, Breadcrumb, Input, Button } from "antd";
+import { useWallet } from "../../context/Wallet";
 import styles from "./styles.module.css";
+
 const { Content } = Layout;
+
 const Deposit = () => {
   const [amount, setAmount] = React.useState();
-  const [address, setAddress] = React.useState();
+
+  const { depositToWallet, fetchCurrentWalletBalance } = useWallet();
+
+  const handleDeposit = React.useCallback(async () => {
+    if (amount) {
+      await depositToWallet(amount);
+      await fetchCurrentWalletBalance();
+      setAmount();
+    }
+  }, [amount, depositToWallet, fetchCurrentWalletBalance]);
+
   return (
     <div>
       <Content style={{ margin: "0 16px" }}>
@@ -18,15 +31,6 @@ const Deposit = () => {
         >
           <h2>Payment Method</h2>
           <div className={styles["input-payment-fields"]}>
-            <Input
-              size="large"
-              placeholder="Enter Address"
-              style={{ margin: "10px" }}
-              type="text || number"
-              required
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
             <Input
               size="large"
               placeholder="Amount (ETH)"
@@ -55,6 +59,7 @@ const Deposit = () => {
             block
             size="large"
             style={{ marginTop: "40px", maxWidth: "90%" }}
+            onClick={handleDeposit}
           >
             Deposit
           </Button>
