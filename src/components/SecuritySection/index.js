@@ -4,9 +4,9 @@ import { MdOutlineSecurity } from "react-icons/md";
 import styles from "./styles.module.css";
 const SecurityCard = () => {
   return (
-    <div>
+    <div className={styles["security-section"]}>
       <Row>
-        <Col span={12}>
+        <Col lg={12} xs={32} md={12}>
           <div className={styles["security-text-container"]}>
             <MdOutlineSecurity size="30px" />
             <h1>Security First</h1>
@@ -16,7 +16,7 @@ const SecurityCard = () => {
             </p>
           </div>
         </Col>
-        <Col span={12}>
+        <Col lg={12} xs={32} md={12}>
           <img
             src="/assets/images/security-card.png"
             alt="security-card"

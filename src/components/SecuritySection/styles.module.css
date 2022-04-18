@@ -16,3 +16,19 @@
   font-weight: 300;
   margin-left: 170px;
 }
+@media screen and (max-width: 768px) {
+  .security-text-container {
+    margin-top: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+  .security-text-container > h1 {
+    font-size: 2rem;
+  }
+  .security-text-container > p {
+    font-size: 1rem;
+    margin-left: 0;
+    text-align: center;
+    padding: 20px;
+  }
+}

@@ -5,15 +5,15 @@ import styles from "./styles.module.css";
 const SmartInvestments = () => {
   return (
     <div>
-      <Row>
-        <Col span={12}>
+      <Row className={styles["investment-section"]}>
+        <Col lg={12} xs={32} md={12}>
           <img
             src="/assets/images/balance-graph.png"
             alt="graph"
             style={{ height: "400px" }}
           />
         </Col>
-        <Col span={12}>
+        <Col lg={12} xs={32} md={12}>
           <div className={styles["investments-container"]}>
             <BsGraphUp size="30px" />
             <h1>Smart Investments</h1>

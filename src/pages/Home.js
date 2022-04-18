@@ -23,7 +23,7 @@ const HomePage = () => {
             id="tsparticles"
             url="https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/particles.json"
           />
-          <Col span={12}>
+          <Col xs={32} md={6} lg={12}>
             <div className="hero-section">
               <h1>Send Crypto across the world</h1>
               <h3>
@@ -46,9 +46,10 @@ const HomePage = () => {
               )}
             </div>
           </Col>
-          <Col span={12}>
+          <Col xs={32} md={6} lg={12}>
             <img
               style={{ marginTop: "80px" }}
+              className="hero-image"
               src="/assets/images/banner-art.png"
               alt="banner-art"
             />

@@ -16,3 +16,29 @@
   font-weight: 300;
   margin-left: 110px;
 }
+
+@media screen and (max-width: 768px) {
+  .investment-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+  .investments-container {
+    margin-top: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+  .investments-container > h1 {
+    font-size: 2rem;
+  }
+  .investments-container > p {
+    font-size: 1rem;
+    margin-left: 0;
+    text-align: center;
+    padding: 20px;
+  }
+  img {
+    width: 80%;
+  }
+}
