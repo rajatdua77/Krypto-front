@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { ethers } from "ethers";
 
-import { contractAddress, walletAbi } from "utils/constants";
+import { contractAddress, walletAbi } from "./constant";
 
 const WalletContext = React.createContext(null);
 
