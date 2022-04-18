@@ -5,7 +5,6 @@ import styles from "./styles.module.css";
 const { Content } = Layout;
 const Withdraw = () => {
   const [amount, setAmount] = React.useState();
-  const [address, setAddress] = React.useState();
 
   const { walletBalance, fetchCurrentWalletBalance, accounts, transfer } =
     useWallet();
@@ -41,15 +40,6 @@ const Withdraw = () => {
         >
           <h2>Payment Method</h2>
           <div className={styles["input-payment-fields"]}>
-            <Input
-              size="large"
-              placeholder="Enter Address"
-              style={{ margin: "10px" }}
-              type="text || number"
-              required
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
             <Input
               size="large"
               placeholder="Amount (ETH)"
