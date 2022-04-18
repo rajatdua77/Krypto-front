@@ -1,10 +1,33 @@
 import React from "react";
-import { Layout, Breadcrumb, Input, Button } from "antd";
+import { Layout, Breadcrumb, Input, Button, notification } from "antd";
+import { useWallet } from "../../context/Wallet";
 import styles from "./styles.module.css";
 const { Content } = Layout;
 const Withdraw = () => {
   const [amount, setAmount] = React.useState();
   const [address, setAddress] = React.useState();
+
+  const { walletBalance, fetchCurrentWalletBalance, accounts, transfer } =
+    useWallet();
+
+  const handleWithdraw = React.useCallback(async () => {
+    if (amount && amount <= walletBalance && accounts && accounts.length > 0) {
+      await transfer(accounts[0], amount, "direct");
+      await fetchCurrentWalletBalance();
+
+      notification.success({
+        message: "Successfully sent",
+        description: `Amount ETH ${amount} has been added to your original wallet ${accounts[0]}`,
+      });
+      setAmount();
+    } else {
+      notification.error({
+        message: "Error",
+        description: `Amount should be less than or equal to ETH ${walletBalance}`,
+      });
+    }
+  }, [accounts, amount, fetchCurrentWalletBalance, transfer, walletBalance]);
+
   return (
     <div>
       <Content style={{ margin: "0 16px" }}>
@@ -55,6 +78,7 @@ const Withdraw = () => {
             block
             size="large"
             style={{ marginTop: "40px", maxWidth: "90%" }}
+            onClick={handleWithdraw}
           >
             Withdraw
           </Button>

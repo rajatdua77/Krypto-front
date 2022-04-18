@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Breadcrumb, Input, Button } from "antd";
+import { Layout, Breadcrumb, Input, Button, notification } from "antd";
 import { useWallet } from "../../context/Wallet";
 import styles from "./styles.module.css";
 import { DollarOutlined } from "@ant-design/icons";
@@ -14,6 +14,9 @@ const SendDirect = () => {
     if (amount && address) {
       await transfer(address, amount, "direct");
       await fetchCurrentWalletBalance();
+      notification.success({
+        message: "Successfully Sent",
+      });
       setAddress();
       setAmount();
     }

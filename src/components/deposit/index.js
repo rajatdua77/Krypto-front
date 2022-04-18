@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Breadcrumb, Input, Button } from "antd";
+import { Layout, Breadcrumb, Input, Button, notification } from "antd";
 import { useWallet } from "../../context/Wallet";
 import styles from "./styles.module.css";
 
@@ -14,6 +14,9 @@ const Deposit = () => {
     if (amount) {
       await depositToWallet(amount);
       await fetchCurrentWalletBalance();
+      notification.success({
+        message: "Successfully Added",
+      });
       setAmount();
     }
   }, [amount, depositToWallet, fetchCurrentWalletBalance]);
