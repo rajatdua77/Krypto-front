@@ -6,13 +6,14 @@ import styles from "./styles.module.css";
 const { Content } = Layout;
 
 const Deposit = () => {
-  const [amount, setAmount, accounts] = React.useState();
+  const [amount, setAmount] = React.useState();
 
-  const { transfer, fetchCurrentWalletBalance } = useWallet();
+  const { transfer, fetchCurrentWalletBalance, accounts } = useWallet();
 
   const handleDeposit = React.useCallback(async () => {
     if (amount && accounts && accounts.length > 0) {
-      await transfer(accounts[0], amount, "wallet");
+      console.log("Amount: ", amount);
+      await transfer(accounts[0], Number(amount), "wallet");
       await fetchCurrentWalletBalance();
       notification.success({
         message: "Successfully Added",

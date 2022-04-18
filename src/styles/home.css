@@ -84,6 +84,17 @@ h3 {
   width: 180px;
   height: 40px;
 }
+
+.metamask-btn {
+  border: 2px solid #ff9800;
+  color: #fff;
+  padding: 10px;
+}
+.metamask-btn:hover {
+  background-color: #fff;
+  color: #ff9800;
+  border: #fff;
+}
 /* Mobile friendly */
 
 @media screen and (max-width: 768px) {
@@ -107,7 +118,7 @@ h3 {
     width: 80%;
     border-radius: 5px;
   }
-  .wallet-btn {
+  .metasmask-btn {
     width: 80%;
     border: 2px solid #ff9800;
     color: #fff;

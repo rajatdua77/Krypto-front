@@ -40,7 +40,7 @@ const HomePage = () => {
                   Dashboard
                 </Button>
               ) : (
-                <Link className="wallet-btn" to="https://metamask.io/">
+                <Link className="metamask-btn" to="https://metamask.io/">
                   Install Metamask
                 </Link>
               )}

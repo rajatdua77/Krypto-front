@@ -8,6 +8,7 @@ const { Title } = Typography;
 const Cryptocurrency = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
   console.log(data);
+  return <h1></h1>;
   const globalStats = data?.data?.stats;
   if (isFetching) return "Loading...";
   return (
