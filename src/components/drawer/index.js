@@ -93,7 +93,10 @@ function SideSlider() {
               Current balance : {walletBalance}
             </h3>
           </Header>
-          <Outlet />
+          <div style={{ padding: "18px" }}>
+            <Outlet />
+          </div>
+
           <Footer style={{ textAlign: "center", alignContent: "baseline" }}>
             Krypto-Wallet ©2022 Created by Rajat Dua
           </Footer>
