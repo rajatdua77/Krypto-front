@@ -8,19 +8,20 @@ const { Content } = Layout;
 const Deposit = () => {
   const [amount, setAmount] = React.useState();
 
-  const { transfer, fetchCurrentWalletBalance, accounts } = useWallet();
+  const { depositToWallet, fetchCurrentWalletBalance, accounts } = useWallet();
 
   const handleDeposit = React.useCallback(async () => {
     if (amount && accounts && accounts.length > 0) {
       console.log("Amount: ", amount);
-      await transfer(accounts[0], Number(amount), "wallet");
+      // await transfer(accounts[0], Number(amount), "wallet");
+      await depositToWallet(Number(amount));
       await fetchCurrentWalletBalance();
       notification.success({
         message: "Successfully Added",
       });
       setAmount();
     }
-  }, [accounts, amount, fetchCurrentWalletBalance, setAmount, transfer]);
+  }, [accounts, amount, fetchCurrentWalletBalance, setAmount, depositToWallet]);
 
   return (
     <div>

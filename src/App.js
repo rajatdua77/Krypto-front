@@ -7,6 +7,7 @@ import Withdraw from "./components/withdraw";
 import { Routes, Route } from "react-router-dom";
 import SendDirect from "./components/sendDirect";
 import Cryptocurrency from "./components/cryptocurrency";
+import Loader from "./components/Loader";
 
 function App() {
   return (
