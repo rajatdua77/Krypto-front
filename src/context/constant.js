@@ -1,4 +1,4 @@
 import wallet from "./w.json";
 
-export const contractAddress = "0xa1Cf121A9df17f78f590885F0bbD93D63A3bf40d";
+export const contractAddress = "0xCF93E6E9cE1A873CcA3D49a06f1270df520CE6E0";
 export const walletAbi = wallet.abi;
