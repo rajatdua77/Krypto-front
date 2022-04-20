@@ -13,9 +13,14 @@
   animation: rotate 5s linear infinite;
 }
 .loader-inner {
+  height: 100%;
+  width: 100%;
+  border: 10px solid #162534;
   border-top-color: #36f372;
-  border-bottom-color: #fff;
-  animation-duration: 2.5s;
+  border-bottom-color: #4bc8eb;
+  border-radius: 50%;
+  /* animation-duration: 2.5s; */
+  animation: rotate-reverse 2.5s linear infinite;
 }
 
 @keyframes rotate {
@@ -24,5 +29,14 @@
   }
   50% {
     transform: scale(0.8) rotate(-360deg);
+  }
+}
+
+@keyframes rotate-reverse {
+  0% {
+    transform: scale(1) rotate(-360deg);
+  }
+  50% {
+    transform: scale(0.8) rotate(360deg);
   }
 }

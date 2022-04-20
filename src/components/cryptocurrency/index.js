@@ -10,7 +10,20 @@ const Cryptocurrency = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
   console.log(data);
   const globalStats = data?.data?.stats;
-  if (isFetching) return <Loader />;
+  if (isFetching)
+    return (
+      <div
+        style={{
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Loader />
+      </div>
+    );
   return (
     <div>
       <Title level={2} className="heading">

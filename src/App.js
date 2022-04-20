@@ -1,4 +1,6 @@
+import React from "react";
 import "./App.css";
+import { useWallet } from "./context/Wallet";
 import SideSlider from "./components/drawer";
 import HomePage from "./pages/Home";
 import Deposit from "./components/deposit";
@@ -10,6 +12,13 @@ import Cryptocurrency from "./components/cryptocurrency";
 import Loader from "./components/Loader";
 
 function App() {
+  const { fetchAccounts } = useWallet();
+
+  React.useEffect(() => {
+    const refreshTimeout = setInterval(() => fetchAccounts(), 5000);
+    return () => clearInterval(refreshTimeout);
+  }, []);
+
   return (
     <div className="App">
       <Routes>
