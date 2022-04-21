@@ -83,7 +83,7 @@ function SideSlider() {
               <Menu.Item key="8">Team 2</Menu.Item>
             </SubMenu> */}
             <Menu.Item key="9" icon={<FileOutlined />}>
-              Market
+              News
             </Menu.Item>
           </Menu>
         </Sider>

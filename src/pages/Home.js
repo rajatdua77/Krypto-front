@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import "../styles/home.css";
@@ -7,6 +8,8 @@ import Navbar from "../components/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import SecurityCard from "../components/SecuritySection";
 import SmartInvestments from "../components/InvestmentsSection";
+import Footer from "../components/Footer";
+import ProgressBars from "../components/ProgressBar";
 
 const HomePage = () => {
   const navigation = useNavigate();
@@ -40,13 +43,14 @@ const HomePage = () => {
                   Dashboard
                 </Button>
               ) : (
-                <Link
+                // eslint-disable-next-line react/jsx-no-target-blank
+                <a
                   className="metamask-btn"
-                  to="https://metamask.io/download/"
+                  href="https://metamask.io/download/"
                   target="_blank"
                 >
                   Install Metamask
-                </Link>
+                </a>
               )}
             </div>
           </Col>
@@ -65,6 +69,10 @@ const HomePage = () => {
       <div style={{ height: "10vh", width: "90vw" }}></div>
       <SmartInvestments />
       <div style={{ height: "10vh", width: "90vw" }}></div>
+      <ProgressBars />
+      <div style={{ height: "30vh", width: "90vw" }}></div>
+
+      <Footer style={{ position: "fixed" }} />
     </>
   );
 };

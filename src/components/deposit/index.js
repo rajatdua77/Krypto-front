@@ -2,6 +2,7 @@ import React from "react";
 import { Layout, Breadcrumb, Input, Button, notification } from "antd";
 import { useWallet } from "../../context/Wallet";
 import styles from "./styles.module.css";
+import PoundCircleOutlined from "@ant-design/icons/lib/icons/PoundCircleOutlined";
 
 const { Content } = Layout;
 
@@ -66,7 +67,7 @@ const Deposit = () => {
             style={{ marginTop: "40px", maxWidth: "90%" }}
             onClick={handleDeposit}
           >
-            Deposit
+            Deposit <PoundCircleOutlined />
           </Button>
         </div>
       </Content>

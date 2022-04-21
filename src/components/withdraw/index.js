@@ -2,6 +2,8 @@ import React from "react";
 import { Layout, Breadcrumb, Input, Button, notification } from "antd";
 import { useWallet } from "../../context/Wallet";
 import styles from "./styles.module.css";
+import { TransactionOutlined } from "@ant-design/icons";
+
 const { Content } = Layout;
 const Withdraw = () => {
   const [amount, setAmount] = React.useState();
@@ -70,7 +72,7 @@ const Withdraw = () => {
             style={{ marginTop: "40px", maxWidth: "90%" }}
             onClick={handleWithdraw}
           >
-            Withdraw
+            Withdraw <TransactionOutlined />
           </Button>
         </div>
       </Content>
