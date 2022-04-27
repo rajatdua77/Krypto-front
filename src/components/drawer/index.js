@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-
+import { FaEthereum } from "react-icons/fa";
 import { Layout, Menu } from "antd";
 import {
   FileOutlined,
@@ -7,6 +7,7 @@ import {
   MoneyCollectOutlined,
   UserSwitchOutlined,
   DollarOutlined,
+  FormOutlined,
 } from "@ant-design/icons";
 import { useNavigate, Outlet } from "react-router-dom";
 import styles from "./styles.module.css";
@@ -85,12 +86,20 @@ function SideSlider() {
             <Menu.Item key="9" icon={<FileOutlined />}>
               News
             </Menu.Item>
+            <Menu.Item
+              key="10"
+              icon={<FormOutlined />}
+              onClick={() => redirectTo("/transactions")}
+            >
+              Transactions
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout className="site-layout">
           <Header className="site-layout-background" style={{ padding: 0 }}>
             <h3 className={styles["balance"]}>
-              Current balance : {walletBalance}
+              Current balance : <FaEthereum size={13} />
+              {walletBalance}
             </h3>
           </Header>
           <div style={{ padding: "18px" }}>

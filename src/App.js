@@ -9,7 +9,7 @@ import Withdraw from "./components/withdraw";
 import { Routes, Route } from "react-router-dom";
 import SendDirect from "./components/sendDirect";
 import Cryptocurrency from "./components/cryptocurrency";
-import Loader from "./components/Loader";
+import Transactions from "./components/transactions";
 
 function App() {
   const { fetchAccounts } = useWallet();
@@ -29,6 +29,7 @@ function App() {
           <Route path="withdraw" element={<Withdraw />} />
           <Route path="sendDirect" element={<SendDirect />} />
           <Route path="" element={<Cryptocurrency />} />
+          <Route path="transactions" element={<Transactions />} />
           <Route path="home" element={<HomePage />} />
         </Route>
       </Routes>
