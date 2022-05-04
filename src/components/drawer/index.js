@@ -83,7 +83,11 @@ function SideSlider() {
               <Menu.Item key="7">Team 1</Menu.Item>
               <Menu.Item key="8">Team 2</Menu.Item>
             </SubMenu> */}
-            <Menu.Item key="9" icon={<FileOutlined />}>
+            <Menu.Item
+              key="9"
+              icon={<FileOutlined />}
+              onClick={() => redirectTo("/news")}
+            >
               News
             </Menu.Item>
             <Menu.Item

@@ -3,6 +3,7 @@ import "./App.css";
 import { useWallet } from "./context/Wallet";
 import SideSlider from "./components/drawer";
 import HomePage from "./pages/Home";
+import News from "./pages/News";
 import Deposit from "./components/deposit";
 import Send from "./components/send";
 import Withdraw from "./components/withdraw";
@@ -30,6 +31,7 @@ function App() {
           <Route path="sendDirect" element={<SendDirect />} />
           <Route path="" element={<Cryptocurrency />} />
           <Route path="transactions" element={<Transactions />} />
+          <Route path="news" element={<News />} />
           <Route path="home" element={<HomePage />} />
         </Route>
       </Routes>

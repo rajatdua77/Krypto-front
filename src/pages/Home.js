@@ -5,7 +5,7 @@ import "../styles/home.css";
 import { Row, Col, Button } from "antd";
 import { useWallet } from "../context/Wallet";
 import Navbar from "../components/Navbar";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SecurityCard from "../components/SecuritySection";
 import SmartInvestments from "../components/InvestmentsSection";
 import Footer from "../components/Footer";
@@ -17,9 +17,9 @@ const HomePage = () => {
   const { isMetamaskInstalled } = useWallet();
   return (
     <>
-      <section class="container">
+      <section className="container">
         <Navbar />
-        <div class="wave"></div>
+        <div className="wave"></div>
         <Row>
           <Particles
             style={{ zIndex: -1 }}

@@ -59,9 +59,15 @@ const Transactions = () => {
     },
   ];
   return (
-    <div>
-      <h1 className={styles["heading"]}>Transaction History</h1>
-      <Table columns={columns} dataSource={data}></Table>
+    <div style={{ height: "70vh" }}>
+      <iframe
+        src="https://rinkeby.etherscan.io/address/0xCF93E6E9cE1A873CcA3D49a06f1270df520CE6E0"
+        height="100%"
+        width="100%"
+        style={{ border: "none", overflow: "auto" }}
+      />
+      {/* <h1 className={styles["heading"]}>Transaction History</h1> */}
+      {/* <Table columns={columns} dataSource={data}></Table> */}
     </div>
   );
 };
