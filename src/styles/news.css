@@ -1,20 +1,18 @@
 .logo-container {
-  padding: "0 5%";
-  display: "flex";
-  justify-content: "space-around";
-  align-items: "center";
-  width: "100%";
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
   /* [theme.breakpoints.down("sm")]: {
       flexDirection: "column-reverse";
       textAlign: "center";
     }, */
 }
 .alan-logo {
-  height: "27vmin";
-  border-radius: "15%";
-  padding: "0 5%";
-  margin: "3% 0";
-  /* [theme.breakpoints.down("sm")]: {
-      height: "35vmin";
-    }, */
+  height: 200px;
+  width: 300px;
+  border-radius: 15%;
+  padding: 0 5%;
+  margin: 3% 0;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import NewsCard from "../NewsCard";
 import { Row, Col, Typography } from "antd";
-import styles from "./Styles.modules.css";
+import styles from "./styles.module.css";
 
 const infoCards = [
   {
@@ -32,47 +32,51 @@ const infoCards = [
 const NewsInfoCards = ({ articles, activeArticle }) => {
   if (!articles.length) {
     return (
-      <Row>
-        {infoCards.map((infocard) => {
-          <Col xs={8} sm={16} md={24} lg={32} className={styles["infoCard"]}>
-            <div
-              className={styles["card"]}
-              style={{ backgroundColor: infocard.color }}
-            >
-              <Typography variant="h5" className={styles["title"]}>
-                {infocard.title}
-              </Typography>
-              {infocard.info ? (
-                <Typography variant="h6">
-                  <strong>{infocard.title.split(" "[2])}:</strong>
-                  <br />
-                  {infocard.info}
+      <div className={styles["container"]}>
+        <Row>
+          {infoCards.map((infocard) => (
+            <Col span={6} className={styles["infoCard"]}>
+              <div
+                className={styles["card"]}
+                style={{ backgroundColor: infocard.color }}
+              >
+                <Typography variant="h5" className={styles["title"]}>
+                  {infocard.title}
                 </Typography>
-              ) : null}
-              <Typography variant="h6">
-                Try Saying : <br />
-                <i>{infocard.text}</i>
-              </Typography>
-            </div>
-          </Col>;
-        })}
-      </Row>
+                {infocard.info ? (
+                  <Typography variant="h6">
+                    <strong>{infocard.title.split(" "[2])}:</strong>
+                    <br />
+                    {infocard.info}
+                  </Typography>
+                ) : null}
+                <Typography variant="h6">
+                  Try Saying : <br />
+                  <i>{infocard.text}</i>
+                </Typography>
+              </div>
+            </Col>
+          ))}
+        </Row>
+      </div>
     );
   }
 
   return (
-    <Row>
-      {articles.map((article, i) => (
-        <Col xs={8} sm={16} md={24} lg={32}>
-          <NewsCard
-            article={article}
-            activeArticle={activeArticle}
-            i={i}
-            style={{ display: "flex" }}
-          />
-        </Col>
-      ))}
-    </Row>
+    <div className={styles["card-container"]}>
+      <Row>
+        {articles.map((article, i) => (
+          <Col span={6}>
+            <NewsCard
+              article={article}
+              activeArticle={activeArticle}
+              i={i}
+              style={{ display: "flex" }}
+            />
+          </Col>
+        ))}
+      </Row>
+    </div>
   );
 };
 

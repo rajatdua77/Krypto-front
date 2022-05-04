@@ -22,8 +22,12 @@ const Navbar = () => {
           Market
         </Menu.Item>
 
-        <Menu.Item key="exchange"> Exchange </Menu.Item>
-        <Menu.Item key="news"> News </Menu.Item>
+        <Menu.Item key="exchange" onClick={() => navigate("/dashboard")}>
+          Exchange
+        </Menu.Item>
+        <Menu.Item key="news" onClick={() => navigate("/dashboard/news")}>
+          News
+        </Menu.Item>
         <Menu.Item key="wallet" onClick={() => navigate("/dashboard/send")}>
           Wallet
         </Menu.Item>

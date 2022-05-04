@@ -1,6 +1,6 @@
 import React, { useEffect, useState, createRef } from "react";
 import { Card, Typography } from "antd";
-
+import styles from "./styles.module.css";
 const { Meta } = Card;
 
 const NewsCard = ({
@@ -30,7 +30,7 @@ const NewsCard = ({
     <Card
       style={{ width: 300 }}
       ref={elRefs[i]}
-      className="newsCard"
+      className={styles["newsCard"]}
       onClick={url ? () => window.open(url, "_blank") : null}
       cover={
         <img
@@ -43,11 +43,9 @@ const NewsCard = ({
       }
     >
       <Meta title={title} description={description} />
-      <div className="details">
-        <Typography>
-          <span>{source.name}</span>
-          <span>{new Date(publishedAt).toDateString()}</span>
-        </Typography>
+      <div className={styles["details"]}>
+        <span>{source.name}</span>
+        <span>{new Date(publishedAt).toDateString()}</span>
       </div>
     </Card>
   );

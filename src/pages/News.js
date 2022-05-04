@@ -46,9 +46,8 @@ const News = () => {
       <div className="logo-container">
         <img
           src="https://i0.wp.com/synqqblog.wpcomstaging.com/wp-content/uploads/2019/11/preview.jpg?fit=1200%2C630&ssl=1"
-          className="alan-logo"
           alt="logo"
-          // style={{ height: "200px", width: "300px", borderRadius: "15%" }}
+          style={{ height: "200px", width: "300px", borderRadius: "15%" }}
         />
       </div>
 
